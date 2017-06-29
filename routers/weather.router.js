@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const darksky = require('../credentials').darksky; //be careful!!!
+const darksky = process.env.DARKSKY || require('../credentials').darksky; //be careful!!!
 const baseUrl = `https://api.darksky.net/forecast/${darksky}/`;
 const axios = require('axios');
 
